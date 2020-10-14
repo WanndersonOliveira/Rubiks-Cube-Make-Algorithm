@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Rubik's Cube Algorithm Creator</title>
+	</head>
+
+	<body>
+		<style>
+			body {
+				background-color:#bebebe;	
+			}
+
+			button{
+				width:100px;
+				height:100px;
+			}
+		</style>
+
+		<script>
+			var movimentos = ["B","F","M","U","D","R","L", "'"];
+
+		
+			function main(){
+
+				var txt = "";
+				var lim = parseInt(document.getElementById("tamanho").value);
+
+
+				for(var i = 0; i < lim; i++){
+					var index = parseInt(Math.random()*8);
+					
+					if(index == 7){
+						i--;
+					}
+
+					txt = txt+movimentos[index];
+				}
+
+				document.getElementById("resposta").innerHTML = txt;
+			}
+		</script>
+
+		<center>
+			<h3>Rubik's Cube Alghorithm Creator</h3>
+
+			<br><br>
+
+			<input type="text" id="tamanho" placeholder="Tamanho do Algoritmo">
+			<br><br><br>
+
+			<button onclick="main()">Go!</button>
+
+			<br><br><br>
+
+			<p id="resposta"></p>
+
+		</center>
+	</body>
+</html>
